@@ -1,0 +1,238 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  /* 🌈 Dégradé + image de fond  */
+  background-image:
+    linear-gradient(to bottom right, rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.75)),
+    url("/medico-cloud-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #1f2933;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 56px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #f9fafb;
+}
+
+.logo span {
+  color: #60a5fa;
+}
+
+/* Bouton login */
+
+.login-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(209, 213, 219, 0.8);
+  background: rgba(15, 23, 42, 0.5);
+  color: #e5e7eb;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.15s ease-out;
+}
+
+.login-btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* Bloc central (hero) */
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 48px;
+
+  /* 🧊 Panneau effet verre */
+  max-width: 1200px;
+  margin: 24px auto 40px;
+  padding: 40px 48px;
+
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(1px);                 /* ← flou verre */
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.28);     /* bordure translucide */
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);     /* ombre douce */
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 24px 22px 28px;
+    margin: 16px 16px 32px;
+  }
+
+  .app-header {
+    padding: 12px 20px;
+  }
+}
+
+/* Texte */
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin: 0 0 12px;
+}
+
+.hero-text h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 18px;
+  color: #4305fe;
+}
+
+.hero-text p {
+  max-width: 520px;
+  margin: 0 0 20px;
+  line-height: 1.6;
+  color: #070707;
+}
+
+.hero-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  color: #070707;
+}
+
+.hero-bullets li + li {
+  margin-top: 6px;
+}
+
+.hero-cta {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: rgba(253, 252, 252, 0.914);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.5);
+}
+
+/* “Image” / illustration */
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 24px;
+  padding: 20px 20px 18px;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(1px);         
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-badge {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.hero-graph {
+  height: 160px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #22c55e, #2563eb);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-graph::before,
+.hero-graph::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-style: dashed;
+}
+
+.hero-graph::after {
+  inset: 34px 38px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-caption {
+  font-size: 0.9rem;
+  color: #08090a;
+  margin: 0;
+}
+
+/* Footer */
+
+.app-footer {
+  padding: 12px 32px 18px;
+  font-size: 0.8rem;
+  color: #d1d5db;
+  text-align: center;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.3), transparent 55%);
+}
+
+.logout-btn{
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(0,0,0,0.25);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.logout-btn:hover{
+  background: rgba(0,0,0,0.4);
+}
