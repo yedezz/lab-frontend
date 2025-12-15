@@ -236,3 +236,23 @@ body {
 .logout-btn:hover{
   background: rgba(0,0,0,0.4);
 }
+.page {
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+input {
+  padding: 6px;
+}
+.page { padding: 20px; }
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
